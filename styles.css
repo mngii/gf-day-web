@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  --primary: #fff;
+  --bg-color: #ff758f;
+  --bg-envelope-color: #f5edd1;
+  --envelope-tab: #ecdeb8;
+  --envelope-cover: #e6cfa7;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --txt-color: #444;
+  --heart-color: #ff6484 ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container > .envelope-wrapper {
+  background: var(--bg-envelope-color);
+  box-shadow: 0 0 40px var(--shadow-color);
+  position: relative;
+}
+
+.envelope-wrapper > .envelope {
+  position: relative;
+  width: 360px; /* Increased width */
+  height: 276px; /* Increased height */
+}
+
+.envelope-wrapper > .envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-top: 156px solid var(--envelope-tab); /* Increased border */
+  border-right: 180px solid transparent; /* Increased border */
+  border-left: 180px solid transparent; /* Increased border */
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope-wrapper > .envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 156px solid transparent; /* Increased border */
+  border-right: 180px solid var(--envelope-cover); /* Increased border */
+  border-bottom: 120px solid var(--envelope-cover); /* Increased border */
+  border-left: 180px solid var(--envelope-cover); /* Increased border */
+}
+
+.envelope > .letter {
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  width: 54%;
+  height: 85%;
+  background: var(--primary);
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 5px var(--shadow-color);
+  padding: 20px 10px;
+}
+
+.envelope > .letter > .text {
+    color: #800f2f;
+    font-size: 14px; /* Increased font size */
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+.envelope > .letter > .text > strong {
+    font-family: 'Tangerine', cursive;
+    display: block;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.heart {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 18px; /* Increased size */
+  height: 18px; /* Increased size */
+  background: var(--heart-color);
+  z-index: 4;
+  transform: translate(-50%, -20%) rotate(45deg);
+  transition: transform 0.5s ease-in-out 1s;
+  box-shadow: 0 1px 6px var(--shadow-color);
+  cursor: pointer;
+}
+
+.heart:before, 
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 18px; /* Increased size */
+  height: 18px; /* Increased size */
+  background-color: var(--heart-color);
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -9px; /* Adjusted position */
+}
+
+.heart:after {
+  right: 9px; /* Adjusted position */
+}
+
+.flap > .envelope:before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.flap > .envelope > .letter {
+  bottom: 120px; /* Adjusted position */
+  transform: scale(1.5);
+  transition-delay: 1s;
+}
+
+.flap > .heart {
+  transform: rotate(90deg);
+  transition-delay: 0.4s;
+}

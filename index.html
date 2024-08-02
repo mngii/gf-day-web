@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear Fizza.</strong>
+                        <p>
+                            In your embrace I am home,<br>
+                            A place where time stands still,<br>
+                            The world fades into whispers,<br> 
+                            And my worries melt away,<br> 
+                            You are the balm to my wounds,<br> 
+                            The whisper to my restless soul,<br> 
+                            In your arms I find solace,<br> 
+                            A love that heals and restores.<br> 
+                        </p>
+                        <span>Happy Girlfriend Day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>
